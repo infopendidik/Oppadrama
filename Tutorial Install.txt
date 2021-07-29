@@ -1,0 +1,5 @@
+1. ekstrak zip di hosting kamu
+2. edit file general.php di folder Config
+3. edit ads di folder ads, jika ingin menghilangkan ads.. silahkan hapus codenya, bukan filenya :D
+
+thanks animeindo.pw

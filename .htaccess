@@ -1,0 +1,46 @@
+RewriteBase /
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)/$ $1 [R=301,L]
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www.%{HTTP_HOST}
+RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI}/$1 [R=301,L]
+RewriteRule ^episode/([^/\.]+) episode.php?link=$1
+RewriteRule ^page/([^/\.]+) index.php?page=$1 [QSA,L]
+RewriteRule ^series/([^/\.]+)/([^/\.]+) series.php?q=$1&page=$2
+RewriteRule ^series/([^/\.]+) series.php?q=$1 [QSA,L]
+RewriteRule ^drama/([^/\.]+) drama.php?q=$1 [QSA,L]
+RewriteRule ^network/([^/\.]+)/([^/\.]+) network.php?q=$1&page=$2
+RewriteRule ^network/([^/\.]+) network.php?q=$1 [QSA,L]
+RewriteRule ^director/([^/\.]+)/([^/\.]+) director.php?q=$1&page=$2
+RewriteRule ^director/([^/\.]+) director.php?q=$1 [QSA,L]
+RewriteRule ^cast/([^/\.]+)/([^/\.]+) cast.php?q=$1&page=$2
+RewriteRule ^cast/([^/\.]+) cast.php?q=$1 [QSA,L]
+RewriteRule ^country/([^/\.]+)/([^/\.]+) country.php?q=$1&page=$2
+RewriteRule ^country/([^/\.]+) country.php?q=$1 [QSA,L]
+RewriteRule ^search/([^/\.]+)/([^/\.]+) search.php?s=$1&page=$2
+RewriteRule ^search/([^/\.]+) search.php?s=$1
+RewriteRule ^genres/(.+)/page/([^/\.]+) genres.php?q=$1&page=$2
+RewriteRule ^genres/([^/\.]+) genres.php?q=$1
+RewriteRule ^year_/([^/\.]+)/([^/\.]+) year.php?q=$1&page=$2
+RewriteRule ^year_/([^/\.]+) year.php?q=$1
+RewriteRule ^year_$ year.php
+RewriteRule ^list$ katalog.php
+RewriteRule ^sitemap.xml sitemap.php
+RewriteRule ^jadwal jadwal.php
+RewriteRule ^home.html index.php
+RewriteRule ^nanime index.php
+RewriteRule ^animeku index.php
+RewriteRule ^riie index.php
+RewriteRule ^oploverz index.php
+RewriteRule ^anoboy index.php
+RewriteRule ^neonime index.php
+RewriteRule ^animenonton-tv index.php
+RewriteRule ^mangaku index.php
+RewriteRule ^sitemap/sitemap.xml sitemap.xml [L,QSA]
+RewriteRule ^animeindo index.php
+RewriteRule ^anime-episode-terbaru index.php
+RewriteRule ^sitemap-(.+).xml sitemap-view.php?num=$1 [L,QSA]
+RewriteRule ^eps-sitemap.xml sitemap-episode.php [L,QSA]
+RewriteRule ^pages/disclaimer.html$ disclaimer.php
+
